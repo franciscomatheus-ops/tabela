@@ -4,6 +4,8 @@
     align-items: center;
     justify-content: center;
     border: none;
+    width: max-content;
+    left: auto;
 }
 table{
     border: 1px ;
