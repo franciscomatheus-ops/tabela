@@ -15,8 +15,8 @@ table, th, td{
     border-collapse: collapse;
     padding: 2px 3px;
     text-align: center;
-    width: auto;
-    height: auto;
+    width: 100vh;
+    height: 100vh;
 }
 input{
     border: none;
