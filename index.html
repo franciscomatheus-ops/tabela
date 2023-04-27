@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pontuação de Xtreino</title>
+    <link rel="shortcut icon" href="./img/f8822397-3b4c-442b-8fbf-489374e0ea38.jpg" type="image/x-icon">
+    <script src="./main.js"></script>
+    <link rel="stylesheet" href="./stylo.css">
+</head>
+<body>
+    <div id="pdf2htmldiv">
+    <table class="tabela">
+        <tr>
+            <td>
+                Posição
+            </td>
+            <td>
+                Kills
+            </td>
+            <td>
+                Resultado
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <input type="text" name="" id="partida1" value="0" onblur="somar1(); final()">
+            </th>
+            <th>
+                <input type="text" name="" id="kill1" value="0" onblur="somar1(); final()">
+            </th>
+            <td id="eu1">0</td>
+        </tr>
+        <tr>
+            <th>
+                <input type="text" name="" id="partida2" value="0" onblur="somar2(); final()">
+            </th>
+            <th>
+                <input type="text" name="" id="kill2" value="0" onblur="somar2(); final()">
+            </th>
+            <td id="eu2">0</td>
+        </tr>
+        <tr>
+            <th>
+                <input type="text" name="" id="partida3" value="0" onblur="somar3(); final()">
+            </th>
+            <th>
+                <input type="text" name="" id="kill3" value="0" onblur="somar3(); final()">
+            </th>
+            <td id="eu3">0</td>
+        </tr>
+        <tr>
+            <th>
+                <input type="text" name="" id="partida4" value="0" onblur="somar4(); final()">
+            </th>
+            <th>
+                <input type="text" name="" id="kill4" value="0" onblur="somar4(); final()">
+            </th>
+            <td id="eu4">0</td>
+        </tr>
+        <tr>
+            <th>
+                <input type="text" name="" id="partida5" value="0" onblur="somar5(); final()">
+            </th>
+            <th>
+                <input type="text" name="" id="kill5" value="0" onblur="somar5(); final()">
+            </th>
+            <td id="eu5">0</td>
+        </tr>
+        <tr>
+            <td>
+                Resultado Das Quedas
+            </td>
+            <td id="geral">0</td>
+        </tr>
+    </table>
+    </div>
+    <div class="btn">
+        <input type="button" onclick="printDiv('pdf2htmldiv')" value="Imprimir" />
+    </div>
+</body>
+</html>
