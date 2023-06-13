@@ -1,0 +1,104 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.pt_geral{
+    display: flex;
+    align-items: center;
+}
+.pt_1{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 1px;
+}
+input{
+    box-shadow: 2px 5px 7px rgb(59, 59, 59);
+    outline: none;
+    border: 0.1px solid rgb(48, 42, 42);
+    border-radius: 3px;
+}
+@media (max-width: 480px){
+    .pt_geral{
+        flex-direction: column;
+    }
+}
+.queda{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+}
+.posicao{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+}
+.abates{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+}
+.soma{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+}
+.tabela{
+    display: flex;
+    justify-content: center;
+    border: solid 1px;
+    width: 50%;
+    justify-content: space-evenly;
+}
+@media (max-width:480px){
+    .tabela{
+        width: 80%;
+    }
+}
+.queda span{
+    border: solid 1px;
+}
+.posicao span{
+    border: solid 1px;
+}
+.abates span{
+    border: solid 1px;
+}
+.soma span{
+    border: solid 1px;
+}
+.tbl{
+    display: flex;
+    justify-content: center;
+    margin-top: 15%;
+}
+.res{
+    display: flex;
+    justify-content: center;
+    width: 50% fit-content;
+
+}
+.resu{
+    display: flex;
+    width: 80%;
+    border: solid 1px;
+    margin-top: 0.5%;
+}
+.resu span{
+    border: solid 1px;
+    text-align: center;
+}
+.btn{
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+.name{
+    width: 75%;
+}
+.sm{
+    width: 25%;
+}
