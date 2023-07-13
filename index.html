@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TABELA DOM FORCE</title>
+    <link rel="shortcut icon" href="./css/img/358747976_595708929341583_8874638090266496454_n.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header>
+        <img src="./css/img/358747976_595708929341583_8874638090266496454_n.jpg" alt="">
+        <h3>DOOM FORCE</h3>
+        <button><a href="https://www.instagram.com/doomforce2021/"><img src="./css/img/instagram.png" alt=""></a></button>
+    </div>
+    </header>
+    <hr>
+    <div class="dados-queda">
+        <div class="dados">
+            <div class="queda-1">
+                <strong>Queda 01</strong>
+                <input type="number" id="partida1" placeholder="Posição" onblur="s1();rf()">
+                <input type="number" id="kill1" placeholder="Abates" onblur="s1();rf()">
+            </div>
+            <div class="queda-2e3">
+                <div class="queda-2">
+                    <strong>Queda 02</strong>
+                    <input type="number" id="partida2" placeholder="Posição" onblur="s2();rf()">
+                    <input type="number" id="kill2" placeholder="Abates" onblur="s2();rf()">
+                </div>
+                <div class="queda-3">
+                    <strong>Queda 03</strong>
+                    <input type="number" id="partida3" placeholder="Posição" onblur="s3();rf()">
+                    <input type="number" id="kill3" placeholder="Abates" onblur="s3();rf()">
+                </div>
+            </div>
+            <div class="queda-4e5">
+                <div class="queda-4">
+                    <strong>Queda 04</strong>
+                    <input type="number" id="partida4" placeholder="Posição" onblur="s4();rf()">
+                    <input type="number" id="kill4" placeholder="Abates" onblur="s4();rf()">
+                </div>
+                <div class="queda-5">
+                    <strong>Queda 05</strong>
+                    <input type="number" id="partida5" placeholder="Posição" onblur="s5();rf()">
+                    <input type="number" id="kill5" placeholder="Abates" onblur="s5();rf()">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tabela">
+        <table>
+            <tr>
+                <th><span>Mapa</span></th>
+                <th><span>Posição</span></th>
+                <th><span>Abates</span></th>
+                <th><span>Soma</span></th>
+            </tr>
+            <tr>
+                <td>#1</td>
+                <td id="p1">0</td>
+                <td id="a1">0</td>
+                <td id="r1">0</td>
+            </tr>
+            <tr>
+                <td>#2</td>
+                <td id="p2">0</td>
+                <td id="a2">0</td>
+                <td id="r2">0</td>
+            </tr>
+            <tr>
+                <td>#3</td>
+                <td id="p3">0</td>
+                <td id="a3">0</td>
+                <td id="r3">0</td>
+            </tr>
+            <tr>
+                <td>#4</td>
+                <td id="p4">0</td>
+                <td id="a4">0</td>
+                <td id="r4">0</td>
+            </tr>
+            <tr>
+                <td>#5</td>
+                <td id="p5">0</td>
+                <td id="a5">0</td>
+                <td id="r5">0</td>
+            </tr>
+        </table>
+    </div>
+    <div class="tbl-2">
+        <table>
+            <tr>
+                <td class="res">Resultado</td>
+                <td id="final" class="soma">0</td>
+            </tr>
+        </table>
+    </div>
+    <div class="botao"><button onclick="print()" class="impressao">Imprimir</button>
+    </div>
+    <script>      
+function s1(){
+    const n = document.querySelector("#partida1");
+    const m = document.querySelector("#kill1");
+
+    const n1 = parseFloat(n.value);
+    const n2 = parseFloat(m.value);
+
+    const numero1 = document.getElementById('p1').innerHTML = n1;
+    const numero2 =  document.getElementById('a1').innerHTML = n2;
+
+    if (numero1 == 1){
+        document.getElementById('r1').innerHTML = 12 + numero2;
+    }
+    if (numero1 == 2){
+        document.getElementById('r1').innerHTML = 9 + numero2;
+    }
+    if (numero1 == 3){
+        document.getElementById('r1').innerHTML = 8 + numero2;
+    }
+    if (numero1 == 4){
+        document.getElementById('r1').innerHTML = 7 + numero2;
+    }
+    if (numero1 == 5){
+        document.getElementById('r1').innerHTML = 6 + numero2;
+    }
+    if (numero1 == 6){
+        document.getElementById('r1').innerHTML = 5 + numero2;
+    }
+    if (numero1 == 7){
+        document.getElementById('r1').innerHTML = 4 + numero2;
+    }
+    if (numero1 == 8){
+        document.getElementById('r1').innerHTML = 3 + numero2;
+    }
+    if (numero1 == 9){
+        document.getElementById('r1').innerHTML = 2 + numero2;
+    }
+    if (numero1 == 10){
+        document.getElementById('r1').innerHTML = 1 + numero2;
+    }
+    if (numero1 == 11){
+        document.getElementById('r1').innerHTML = 0 + numero2;
+    }    if (numero1 == 12){
+        document.getElementById('r1').innerHTML = 0 + numero2;
+    }
+
+}
+function s2(){
+    const n = document.querySelector("#partida2");
+    const m = document.querySelector("#kill2");
+
+    const n1 = parseFloat(n.value);
+    const n2 = parseFloat(m.value);
+
+    const numero1 = document.getElementById('p2').innerHTML = n1;
+    const numero2 =  document.getElementById('a2').innerHTML = n2;
+
+    if (numero1 == 1){
+        document.getElementById('r2').innerHTML = 12 + numero2;
+    }
+    if (numero1 == 2){
+        document.getElementById('r2').innerHTML = 9 + numero2;
+    }
+    if (numero1 == 3){
+        document.getElementById('r2').innerHTML = 8 + numero2;
+    }
+    if (numero1 == 4){
+        document.getElementById('r2').innerHTML = 7 + numero2;
+    }
+    if (numero1 == 5){
+        document.getElementById('r2').innerHTML = 6 + numero2;
+    }
+    if (numero1 == 6){
+        document.getElementById('r2').innerHTML = 5 + numero2;
+    }
+    if (numero1 == 7){
+        document.getElementById('r2').innerHTML = 4 + numero2;
+    }
+    if (numero1 == 8){
+        document.getElementById('r2').innerHTML = 3 + numero2;
+    }
+    if (numero1 == 9){
+        document.getElementById('r2').innerHTML = 2 + numero2;
+    }
+    if (numero1 == 10){
+        document.getElementById('r2').innerHTML = 1 + numero2;
+    }
+    if (numero1 == 11){
+        document.getElementById('r2').innerHTML = 0 + numero2;
+    }    if (numero1 == 12){
+        document.getElementById('r2').innerHTML = 0 + numero2;
+    }
+
+}
+function s3(){
+    const n = document.querySelector("#partida3");
+    const m = document.querySelector("#kill3");
+
+    const n1 = parseFloat(n.value);
+    const n2 = parseFloat(m.value);
+
+    const numero1 = document.getElementById('p3').innerHTML = n1;
+    const numero2 =  document.getElementById('a3').innerHTML = n2;
+
+    if (numero1 == 1){
+        document.getElementById('r3').innerHTML = 12 + numero2;
+    }
+    if (numero1 == 2){
+        document.getElementById('r3').innerHTML = 9 + numero2;
+    }
+    if (numero1 == 3){
+        document.getElementById('r3').innerHTML = 8 + numero2;
+    }
+    if (numero1 == 4){
+        document.getElementById('r3').innerHTML = 7 + numero2;
+    }
+    if (numero1 == 5){
+        document.getElementById('r3').innerHTML = 6 + numero2;
+    }
+    if (numero1 == 6){
+        document.getElementById('r3').innerHTML = 5 + numero2;
+    }
+    if (numero1 == 7){
+        document.getElementById('r3').innerHTML = 4 + numero2;
+    }
+    if (numero1 == 8){
+        document.getElementById('r3').innerHTML = 3 + numero2;
+    }
+    if (numero1 == 9){
+        document.getElementById('r3').innerHTML = 2 + numero2;
+    }
+    if (numero1 == 10){
+        document.getElementById('r3').innerHTML = 1 + numero2;
+    }
+    if (numero1 == 11){
+        document.getElementById('r3').innerHTML = 0 + numero2;
+    }    if (numero1 == 12){
+        document.getElementById('r3').innerHTML = 0 + numero2;
+    }
+
+}
+function s4(){
+    const n = document.querySelector("#partida4");
+    const m = document.querySelector("#kill4");
+
+    const n1 = parseFloat(n.value);
+    const n2 = parseFloat(m.value);
+
+    const numero1 = document.getElementById('p4').innerHTML = n1;
+    const numero2 =  document.getElementById('a4').innerHTML = n2;
+
+    if (numero1 == 1){
+        document.getElementById('r4').innerHTML = 12 + numero2;
+    }
+    if (numero1 == 2){
+        document.getElementById('r4').innerHTML = 9 + numero2;
+    }
+    if (numero1 == 3){
+        document.getElementById('r4').innerHTML = 8 + numero2;
+    }
+    if (numero1 == 4){
+        document.getElementById('r4').innerHTML = 7 + numero2;
+    }
+    if (numero1 == 5){
+        document.getElementById('r4').innerHTML = 6 + numero2;
+    }
+    if (numero1 == 6){
+        document.getElementById('r4').innerHTML = 5 + numero2;
+    }
+    if (numero1 == 7){
+        document.getElementById('r4').innerHTML = 4 + numero2;
+    }
+    if (numero1 == 8){
+        document.getElementById('r4').innerHTML = 3 + numero2;
+    }
+    if (numero1 == 9){
+        document.getElementById('r4').innerHTML = 2 + numero2;
+    }
+    if (numero1 == 10){
+        document.getElementById('r4').innerHTML = 1 + numero2;
+    }
+    if (numero1 == 11){
+        document.getElementById('r4').innerHTML = 0 + numero2;
+    }    if (numero1 == 12){
+        document.getElementById('r4').innerHTML = 0 + numero2;
+    }
+
+}
+function s5(){
+    const n = document.querySelector("#partida5");
+    const m = document.querySelector("#kill5");
+
+    const n1 = parseFloat(n.value);
+    const n2 = parseFloat(m.value);
+
+    const numero1 = document.getElementById('p5').innerHTML = n1;
+    const numero2 =  document.getElementById('a5').innerHTML = n2;
+
+    if (numero1 == 1){
+        document.getElementById('r5').innerHTML = 12 + numero2;
+    }
+    if (numero1 == 2){
+        document.getElementById('r5').innerHTML = 9 + numero2;
+    }
+    if (numero1 == 3){
+        document.getElementById('r5').innerHTML = 8 + numero2;
+    }
+    if (numero1 == 4){
+        document.getElementById('r5').innerHTML = 7 + numero2;
+    }
+    if (numero1 == 5){
+        document.getElementById('r5').innerHTML = 6 + numero2;
+    }
+    if (numero1 == 6){
+        document.getElementById('r5').innerHTML = 5 + numero2;
+    }
+    if (numero1 == 7){
+        document.getElementById('').innerHTML = 4 + numero2;
+    }
+    if (numero1 == 8){
+        document.getElementById('r5').innerHTML = 3 + numero2;
+    }
+    if (numero1 == 9){
+        document.getElementById('r5').innerHTML = 2 + numero2;
+    }
+    if (numero1 == 10){
+        document.getElementById('r5').innerHTML = 1 + numero2;
+    }
+    if (numero1 == 11){
+        document.getElementById('r5').innerHTML = 0 + numero2;
+    }    
+    if (numero1 == 12){
+        document.getElementById('r5').innerHTML = 0 + numero2;
+    }
+}
+
+function rf(){
+
+    const res1 = parseFloat(document.getElementById('r1').innerHTML);
+    const res2 = parseFloat(document.getElementById('r2').innerHTML);
+    const res3 = parseFloat(document.getElementById('r3').innerHTML);
+    const res4 = parseFloat(document.getElementById('r4').innerHTML);
+    const res5 = parseFloat(document.getElementById('r5').innerHTML);
+
+    document.getElementById('final').innerHTML = res1 + res2 + res3 + res4 + res5;
+
+
+}
+    </script>
+</body>
+</html>
