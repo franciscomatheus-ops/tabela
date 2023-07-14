@@ -28,6 +28,9 @@
         border: solid 1px;
         text-align: center;
     }
+    .final{
+        width: 65px;
+    }
 
 }
 @media (max-width: 480px){
