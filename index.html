@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, tr, td, th{
+            border: solid 1px #ccc;
+            border-collapse: collapse;
+        }
+        th{
+            width: 80px;
+        }
+        td{
+            text-align: center;
+        }
+        input{
+            width: 100%;
+            box-sizing: border-box;
+            outline: none;
+        }
+        .res{
+            border: solid 1px #ccc;
+            border-top: none;
+            margin-top: 0px;
+            width: 338px;
+            display: flex;
+        }
+        .res-title{
+            width: 255px;
+            text-align: center;
+        }
+        #pontos{
+            border-left: solid 1px #ccc;
+            width: 80px;
+            text-align: center;
+        }
+        html, body{
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="tabela">
+        <table>
+            <tr>
+                <th>Queda</th>
+                <th>Colocação</th>
+                <th>Abates</th>
+                <th>Pontos</th>
+            </tr>
+            <tr>
+                <td>#1</td>
+                <th><input type="number" id="queda-01" value="0"></th>
+                <td><input type="number" id="abates-01" value="0"></td>
+                <td id="p1">0</td>
+            </tr>
+            <tr>
+                <td>#2</td>
+                <td><input type="number" id="queda-02" value="0"></td>
+                <td><input type="number" id="abates-02" value="0"></td>
+                <td id="p2">0</td>
+            </tr>
+            <tr>
+                <td>#3</td>
+                <td><input type="number" id="queda-03" value="0"></td>
+                <td><input type="number" id="abates-03" value="0"></td>
+                <td id="p3">0</td>
+            </tr>
+            <tr>
+                <td>#4</td>
+                <td><input type="number" id="queda-04" value="0"></td>
+                <td><input type="number" id="abates-04" value="0"></td>
+                <td id="p4">0</td>
+            </tr>
+            <tr>
+                <td>#5</td>
+                <td><input type="number" id="queda-05" value="0"></td>
+                <td><input type="number" id="abates-05" value="0"></td>
+                <td id="p5">0</td>
+            </tr>
+        </table>
+        <div class="res">
+            <div class="res-title">Total</div>
+            <div id="pontos">0</div>
+        </div>
+    </div>
+    <script>
+        // armazenagem de dados das quedas - COLOCAÇÃO
+        var q1 = document.getElementById('queda-01');
+        var q2 = document.getElementById('queda-02');
+        var q3 = document.getElementById('queda-03');
+        var q4 = document.getElementById('queda-04');
+        var q5 = document.getElementById('queda-05');
+        //  armazenagem de dados dos abates - ABATES
+        var  a1 = document.getElementById('abates-01');
+        var  a2 = document.getElementById('abates-02');
+        var  a3 = document.getElementById('abates-03');
+        var  a4 = document.getElementById('abates-04');
+        var  a5 = document.getElementById('abates-05');
+
+        q1.addEventListener('focus', function(){
+            q1.value = '';
+            q1.addEventListener('focusout', function(){
+                if (q1.value == ''){
+                    q1.value = 0
+                }
+                else if(q1.value > 12){
+                    q1.value = '0'; 
+                    alert("Valor Inválido! Digite um valor entre 1 e 12.")
+                }
+                total()
+            })
+            q1.addEventListener('input', soma1);
+            
+        })
+        
+        q2.addEventListener('focus', function(){
+            q2.value = '';
+            q2.addEventListener('focusout', function(){
+            if (q2.value == ''){
+                q2.value = 0
+            }
+            else if (q2.value > 12){
+                q2.value = 0;
+                alert("Valor Inválido! Digite um valor entre 1 e 12.");
+            }
+            total()
+            })
+            q2.addEventListener('input', soma2)
+        })
+        
+        q3.addEventListener('focus', function(){
+            q3.value = '';
+            q3.addEventListener('focusout', function(){
+            if (q3.value == ''){
+                q3.value = 0;
+            }
+            else if (q3.value > 12){
+                q3.value = 0;
+                alert("Valor Inválido! Digite um valor entre 1 e 12.")
+            }
+            total()
+            })
+            q3.addEventListener('input', soma3)
+        })
+        
+        q4.addEventListener('focus', function(){
+            q4.value = '';
+            q4.addEventListener('focusout', function(){
+                if (q4.value == ''){
+                    q4.value = 0
+                }
+                else if (q4.value > 12){
+                    q4.value = 0;
+                    alert("Valor Inválido! Digite um valor entre 1 e 12.")
+                }
+                total()
+            })
+            q4.addEventListener('input', soma4) 
+        })
+
+        q5.addEventListener('focus', function(){
+            q5.value = '';
+            q5.addEventListener('focusout', function(){
+                if (q5.value == ''){
+                    q5.value = 0
+                }
+                else if (q5.value > 12){
+                    q5.value = 0
+                    alert("Valor Inválido! Digite um valor entre 1 e 12.")
+                }
+                total()
+            })
+            q5.addEventListener('input', soma5)
+        })
+
+        a1.addEventListener('focus', function(){
+            a1.value = '';
+            a1.addEventListener('focusout', function(){
+                if (a1.value == ''){
+                    a1.value = 0
+                }
+                total()
+            })
+            a1.addEventListener('input', soma1)
+        })
+
+        a2.addEventListener('focus', function(){
+            a2.value = '';
+            a2.addEventListener('focusout', function(){
+                if (a2.value == ''){
+                    a2.value = 0
+                }
+                total()
+            })
+            a2.addEventListener('input', soma2)
+        })
+
+        a3.addEventListener('focus', function(){
+            a3.value = '';
+            a3.addEventListener('focusout', function(){
+                if (a3.value == ''){
+                    a3.value = 0
+                }
+                total()
+            })
+            a3.addEventListener('input', soma3)
+        })
+
+        a4.addEventListener('focus', function(){
+            a4.value = '';
+            a4.addEventListener('focusout', function(){
+                if (a4.value == ''){
+                    a4.value = 0
+                }
+                total()
+            })
+            a4.addEventListener('input', soma4)
+        })
+
+        a5.addEventListener('focus', function(){
+            a5.value = '';
+            a5.addEventListener('focusout', function(){
+                if (a5.value == ''){
+                    a5.value = 0
+                }
+                total()
+            })
+            a5.addEventListener('input', soma5)
+        })
+
+        function soma1(){
+            var n1 = parseInt(q1.value);
+            var n2 = parseInt(a1.value);
+            if (n1 == 1){
+                document.getElementById('p1').innerHTML = 12 + n2;
+            }
+        }
+        function soma2(){
+            var n1 = parseInt(q2.value);
+            var n2 = parseInt(a2.value);
+            if (n1 == 1){
+                document.getElementById('p2').innerHTML = 12 + n2;
+            }
+        }
+        function soma3(){
+            var n1 = parseInt(q3.value);
+            var n2 = parseInt(a3.value);
+            if (n1 == 1){
+                document.getElementById('p3').innerHTML = 12 + n2;
+            }
+        }
+        function soma4(){
+            var n1 = parseInt(q4.value);
+            var n2 = parseInt(a4.value);
+            if (n1 == 1){
+                document.getElementById('p4').innerHTML = 12 + n2;
+            }
+        }
+        function soma5(){
+            var n1 = parseInt(q5.value);
+            var n2 = parseInt(a5.value);
+            if (n1 == 1){
+                document.getElementById('p5').innerHTML = 12 + n2;
+            }
+        }
+        function total(){
+            var n1 = parseInt(document.getElementById('p1').innerHTML)
+            var n2 = parseInt(document.getElementById('p2').innerHTML)
+            var n3 = parseInt(document.getElementById('p3').innerHTML)
+            var n4 = parseInt(document.getElementById('p4').innerHTML)
+            var n5 = parseInt(document.getElementById('p5').innerHTML)
+
+            var soma = n1 + n2 + n3 + n4 + n5;
+            document.getElementById('pontos').innerHTML = soma;
+        }
+    </script>
+</body>
+</html>
