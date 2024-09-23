@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    gap: 0;
+    box-sizing: border-box;
+}
+html, body{
+    height: 100%;
+}
+body{
+    display: grid;
+    place-items: center;
+    font-family: "Roboto", sans-serif;
+}
+table, tr, td, th{
+    border: solid 1px;
+    border-collapse: collapse;
+    text-transform: capitalize;
+    text-align: center;
+}
+th{
+    padding: 10px;
+}
+/* td{
+    padding: 10px 0px;
+} */
+input{
+    width: 100%;
+    text-align: center;
+    border: none;
+    outline: none;
+    padding: 10px;
+}
+input::-webkit-inner-spin-button{
+    appearance: none;
+}
+.form{
+    /* border: solid; */
+    width: fit-content;
+    padding: 10px;
+}
+.form div{
+    width: 100%;
+    display: flex;
+    gap: 5px;
+    padding: 5px 0;
+}
+.form div button{
+    width: 50%;
+    height: 40px;
+    font-size: x-large;
+}
