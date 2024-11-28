@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acesso</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            display: grid;
+            place-items: center;
+            background: rgb(238, 174, 202);
+            background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+        }
+
+        div {
+            border: solid 1px;
+            max-width: 400px;
+            max-height: 600px;
+            min-width: 320px;
+            min-height: 400px;
+            border-radius: 18px;
+            display: grid;
+            place-items: center;
+            box-shadow: 3px 3px 10px gray;
+        }
+
+        div h3{
+            text-align: center;
+        }
+
+        div a {
+            height: 35px;
+            width: 70%;
+            border-radius: 13px;
+            border: solid 1px gray;
+            cursor: pointer;
+            background-color: rgba(148, 187, 233, 1);
+            color: white;
+            box-shadow: 3px 3px 10px gray;
+            display: grid;
+            place-items: center;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h3 id="texto"></h3>
+        <a href="./app/index.html" id="a">Começar</a>
+    </div>
+    <script>
+
+        const texto = "Olá! Seja bem vindo!";
+        const elemento = document.getElementById("texto");
+        let index = 0;
+        function escreverTexto() {
+            if (index < texto.length) {
+                elemento.textContent += texto[index]; // Adiciona a próxima letra
+                index++; // Incrementa o índice
+            } else {
+                clearInterval(intervalo); // Para o intervalo quando o texto termina
+            }
+        }
+        const intervalo = setInterval(escreverTexto, 100);
+
+        if(!localStorage.getItem('FirstLogin')){
+            localStorage.setItem('FirstLogin', 'false');
+        }
+        else{
+            if(localStorage.getItem('FirstLogin') == 'true'){
+                window.location.href = './app/index.html';
+            }
+        }
+    </script>
+</body>
+
+</html>
