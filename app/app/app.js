@@ -24,11 +24,11 @@ function Menu(info) {
 
 function eqp() {
     console.log('FUNCAO DE EXIBICAO DE EQUIPES');
-      
+
     if (!localStorage.getItem('TblEqp')) {
         let Equipes = [];
-        for (let x = 1; x <= 12; x++){
-            let equipe = {lineID:`line${x}`, name:`Line ${x}`, pontos:0, abates:0, booyah:0, id:x};
+        for (let x = 1; x <= 12; x++) {
+            let equipe = { lineID: `line${x}`, name: `Line ${x}`, pontos: 0, abates: 0, booyah: 0, id: x };
             Equipes.push(equipe);
         }
         localStorage.setItem('TblEqp', JSON.stringify(Equipes));
@@ -43,16 +43,60 @@ function eqp() {
 }
 function tblGeral() {
     console.log('FUNCAO DE EXIBICAO ED TABELA');
+    let tbl = JSON.parse(localStorage.getItem('TblEqp'));
+    let main = document.getElementById('main');
+    main.innerText = '';
+    let table = document.createElement('table');
+    let count = 1;
+    tbl.forEach(line => {
+        let tr = document.createElement('tr');
+        if (count == 1) {
+            let trtitle = document.createElement('tr');
+            let trinfo = document.createElement('tr');
+            let title = document.createElement('td');
+            for (let x = 1; x <= 5; x++) {
+                let tdinfo = document.createElement('td');
+                tdinfo.innerText = x == 1 ? 'Rank' : x == 2 ? 'Equipes' : x == 3 ? 'Pontos' : x == 4 ? 'Kills' : 'Total';
+                trinfo.append(tdinfo);
+            }
+            title.setAttribute('colspan', 5)
+            title.innerText = 'Tabela de Pontos';
+            trtitle.append(title)
+            table.append(trtitle, trinfo)
+        }
+        for (let x = 1; x <= 5; x++) {
+            let td = document.createElement('td');
+            td.innerText = x == 1 ? line.id : x == 2 ? line.name : x == 3 ? line.pontos : x == 4 ? line.abates : (parseInt(line.abates) + parseInt(line.pontos));
+            tr.append(td)
+            table.append(tr)
+        }
+        count++;
+    })
+    main.append(table)
 }
 function historico() {
     console.log('FUNCAO DE EXIBICAO DE HISTORICO');
+    let main = document.getElementById('main');
+    main.innerText = '';
+    if (!localStorage.getItem('historico')) {
+        let his = [];
+        localStorage.setItem('historico', JSON.stringify(his));
+    }
+    else {
+        let historico = JSON.parse(localStorage.getItem('historico'));
+        if (historico.length == 0) {
+            let h3 = document.createElement('h3');
+            h3.innerHTML = 'Sem historico disponíveis para visualização!'
+            main.append(h3)
+        }
+    }
 }
 
 function tagLine(line) {
     let MainBody = document.getElementById('main');
     let table = document.createElement('table');
     table.id = line.lineID;
-    table.setAttribute('onclick', `editEqp(${line.lineID})`)
+    table.addEventListener('click', ()=>{ linepopup(line.lineID) })
     for (let x = 1; x <= 5; x++) {
         let tr = document.createElement('tr');
         let td1 = document.createElement('td');
@@ -72,13 +116,12 @@ function tagLine(line) {
     MainBody.append(table)
 
 }
-
-function editEqp(line) {
-    let tabela = JSON.parse(localStorage.getItem('TblEqp'));
-    tabela.forEach(l => {
-        if (l.lineID == line.id) {
-            console.log(l);
-        }
-        
-    });
+function linepopup(id) {
+    let main = document.getElementById('main');
+    console.log(id);
+    let divpop = document.createElement('div');
+    divpop.innerText = 'teste';
+    divpop.classList = 'popupline';
+    main.append(divpop);
+    
 }
